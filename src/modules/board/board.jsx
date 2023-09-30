@@ -50,16 +50,16 @@ class Board extends React.Component {
     }
     setCanvasSize(canvas) {
         //var canvas = document.querySelector('#board');
-        var sketch = document.querySelector('#sketch');
-        var sketch_style = getComputedStyle(sketch);
-        canvas.width = parseInt(sketch_style.getPropertyValue('width'));
-        canvas.height = parseInt(sketch_style.getPropertyValue('height'));
-        var cs=this.canvasRef.current;
+        var maindiv = document.querySelector('#boarddiv');
+        var maindiv_st = getComputedStyle(maindiv);
+        canvas.width = parseInt(maindiv_st.getPropertyValue('width'));
+        canvas.height = parseInt(maindiv_st.getPropertyValue('height'));
+        //var cs=this.canvasRef.current;
         //canvas.width=cs.width;
         //canvas.height=cs.height;
-        console.log(canvas.width,canvas.height)
-        console.log(cs.width,cs.height)
-        console.log('setCanvasSize');
+        //console.log(canvas.width,canvas.height)
+        //console.log(cs.width,cs.height)
+        //console.log('setCanvasSize');
     }
     cls(){
         var cs = this.canvasRef.current;
@@ -74,10 +74,10 @@ class Board extends React.Component {
     oncanvasresize(){
             var can=this.canvasRef.current;
             var img = can.toDataURL("image/png");
-            var sketch = document.querySelector('#sketch');
-            var sketch_style = getComputedStyle(sketch);
-            can.width = parseInt(sketch_style.getPropertyValue('width'));
-            can.height = parseInt(sketch_style.getPropertyValue('height'));
+            var maindiv = document.querySelector('#boarddiv');
+            var maindiv_st = getComputedStyle(maindiv);
+            can.width = parseInt(maindiv_st.getPropertyValue('width'));
+            can.height = parseInt(maindiv_st.getPropertyValue('height'));
             var image = new Image();
             var ctx = can.getContext('2d');
             image.onload = function() {
@@ -153,21 +153,14 @@ class Board extends React.Component {
             <div id="divin" class="divin"><button id="cls" class="cls">Clear</button></div>
         <div id="divin" class="divin"><Ping></Ping></div>
         <div id="divin" class="divin"><Pingpong technology={this.state.ttechnology}></Pingpong></div>
-                    
-        
-        
-        
-        
         <input type="radio" name="radio" id="websocket" class="websocket" value="websocket" checked={this.state.ttechnology === "websocket"} onChange={this.radiochange}/>
                 <label htmlFor="websocket" id="webs">Websocket</label>
             
             <input name="radio" type="radio" id="polling" class="polling" value="polling" checked={this.state.ttechnology === "polling"} onChange={this.radiochange}/>
                 <label htmlFor="polling" id="poll">Polling</label> 
                 </div>
-            <div class="board-c">
-            <div class="sketch" id='sketch'>
+            <div class="boarddiv" id='boarddiv'>
                 <canvas className="board" id="board" ref={this.canvasRef}></canvas>
-            </div>
             </div>
         </div>
             
