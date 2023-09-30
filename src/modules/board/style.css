@@ -1,0 +1,34 @@
+.container{
+    position:fixed;
+    width:100%;
+    height:100%;
+    background: black;
+  }
+.pingh1{
+  color:white;
+}
+.temp{
+  color:white;
+}
+#webs,#poll{
+  color:white;
+}
+.divbuttons{
+    text-align: center;
+  }
+.board-c{
+    width:90%;
+    height:90%;
+    margin:auto;
+    margin-top: 3%;
+    background: white;
+  }
+
+.board{
+    width:100%;
+    height:100%;
+}
+.sketch{
+    width:100%;
+    height:100%;
+}
