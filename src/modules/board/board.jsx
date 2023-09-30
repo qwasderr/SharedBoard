@@ -54,12 +54,6 @@ class Board extends React.Component {
         var maindiv_st = getComputedStyle(maindiv);
         canvas.width = parseInt(maindiv_st.getPropertyValue('width'));
         canvas.height = parseInt(maindiv_st.getPropertyValue('height'));
-        //var cs=this.canvasRef.current;
-        //canvas.width=cs.width;
-        //canvas.height=cs.height;
-        //console.log(canvas.width,canvas.height)
-        //console.log(cs.width,cs.height)
-        //console.log('setCanvasSize');
     }
     cls(){
         var cs = this.canvasRef.current;
