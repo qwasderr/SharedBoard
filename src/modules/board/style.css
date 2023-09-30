@@ -13,14 +13,21 @@
 #webs,#poll{
   color:white;
 }
-.divbuttons{
-    text-align: center;
+.outdiv{
+  text-align: center;
   }
+.divin{
+    text-align: center;
+    display:inline-block;
+    margin-right: 30px;
+  
+  }
+
 .board-c{
     width:90%;
     height:90%;
     margin:auto;
-    margin-top: 3%;
+    margin-top: 0%;
     background: white;
   }
 

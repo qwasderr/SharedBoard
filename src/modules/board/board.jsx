@@ -149,17 +149,21 @@ class Board extends React.Component {
     render(){
         return(
             <div className="container">
-        <div id="divbuttons" class="divbuttons"><button id="cls" class="cls">Clear</button>
-        <Ping></Ping>
-        <Pingpong technology={this.state.ttechnology}></Pingpong>
-        <div>
-            <input type="radio" name="radio" id="websocket" class="websocket" value="websocket" checked={this.state.ttechnology === "websocket"} onChange={this.radiochange}/>
+                <div id="outdiv" class="outdiv">
+            <div id="divin" class="divin"><button id="cls" class="cls">Clear</button></div>
+        <div id="divin" class="divin"><Ping></Ping></div>
+        <div id="divin" class="divin"><Pingpong technology={this.state.ttechnology}></Pingpong></div>
+                    
+        
+        
+        
+        
+        <input type="radio" name="radio" id="websocket" class="websocket" value="websocket" checked={this.state.ttechnology === "websocket"} onChange={this.radiochange}/>
                 <label htmlFor="websocket" id="webs">Websocket</label>
             
             <input name="radio" type="radio" id="polling" class="polling" value="polling" checked={this.state.ttechnology === "polling"} onChange={this.radiochange}/>
                 <label htmlFor="polling" id="poll">Polling</label> 
-        </div>
-        </div>
+                </div>
             <div class="board-c">
             <div class="sketch" id='sketch'>
                 <canvas className="board" id="board" ref={this.canvasRef}></canvas>
